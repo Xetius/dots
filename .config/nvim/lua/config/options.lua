@@ -20,7 +20,7 @@ end)
 
 vim.o.splitright = true
 vim.o.splitbelow = true
---
+
 vim.o.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 

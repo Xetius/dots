@@ -4,7 +4,7 @@ if [[ "Linux" == "$(uname)" ]]; then
   export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH
 fi
 
-if [[ ! -d ~/.zplug ]];then
+if [[ ! -d ~/.zplug ]] ;then
     git clone https://github.com/b4b4r07/zplug ~/.zplug
 fi
 
@@ -92,6 +92,10 @@ bindkey ' ' magic-space
 bindkey '^y' autosuggest-accept
 
 export PATH=${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.local/bin:$(brew --prefix)/bin:$PATH
+
+if [[ -d "$HOME/.cargo/bin" ]]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
 
 zplug load
 

@@ -1,8 +1,4 @@
-require("config.lazy")
-
-require("config.globals")
+require("config.global")
 require("config.options")
-require("config.filetypes")
-require("config.keymaps")
-require("config.autocmds")
-require("config.colorscheme")
+require("config.keymap")
+
