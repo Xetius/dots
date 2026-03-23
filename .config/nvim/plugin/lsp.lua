@@ -27,7 +27,12 @@ require('mason-tool-installer').setup({
     'lua_ls',
     'stylua',
     'pyright',
-    'terraformls'
+    'terraformls',
+    'yamlls',
+    'yamllint',
+    'kube-linter',
+    'kubescape',
+
   }
 })
 
