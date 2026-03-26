@@ -26,6 +26,12 @@ if [[ "${HOSTNAME}" == "lontngm-047.local" ]]; then
     test -f "${DOTFILES}/zsh/secrets" && source "$_"
 fi
 
+if [[ -f "~/openai.txt" ]]; then
 export OPENAI_API_KEY=$(cat ~/openai.txt)
+fi
+
+if [[ -f "~/.github/token" ]]; then
+  export GITHUB_TOKEN=$(cat ~/.github/token)
+fi
 
 . "$HOME/.cargo/env"

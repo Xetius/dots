@@ -81,6 +81,7 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(thefuck --alias)"
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/xetius.omp.json)"
+eval "$(tv init zsh)"
 
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh

@@ -5,8 +5,8 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#458588",
-          "foreground": "#282828",
+          "background": "#292e42",
+          "foreground": "#9ea5c9",
           "powerline_symbol": "\ue0b0",
           "options": {
             "style": "folder"
@@ -16,14 +16,14 @@
           "type": "path"
         },
         {
-          "background": "#98971A",
+          "background": "#3b4261",
           "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
-            "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
-            "{{ if gt .Behind 0 }}#B388FF{{ end }}"
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#e0af68{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#db4b4b{{ end }}",
+            "{{ if gt .Ahead 0 }}#9ece6a{{ end }}",
+            "{{ if gt .Behind 0 }}#9ece6a{{ end }}"
           ],
-          "foreground": "#282828",
+          "foreground": "#292e42",
           "leading_diamond": "\ue0b6",
           "powerline_symbol": "\ue0b0",
           "options": {
@@ -42,7 +42,7 @@
           "style": "powerline",
           "powerline_symbol": "",
           "foreground": "#000000",
-          "background": "#ebcc34",
+          "background": "#89ddff",
           "template": " ﴱ {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} ",
           "options": {
             "context_aliases": {
@@ -56,8 +56,8 @@
         },
         {
           "background_templates": [
-            "{{if contains \"default\" .Profile}}#FFA400{{end}}",
-            "{{if contains \"jan\" .Profile}}#f1184c{{end}}"
+            "{{if contains \"default\" .Profile}}#e0af68{{end}}",
+            "{{if contains \"jan\" .Profile}}#db4b4b{{end}}"
           ],
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
@@ -69,8 +69,8 @@
           "type": "aws"
         },
         {
-          "background": "#ffff66",
-          "foreground": "#111111",
+          "background": "#1b1e2d",
+          "foreground": "#7aa2f7",
           "powerline_symbol": "\ue0b0",
           "style": "powerline",
           "template": " \uf0ad ",
@@ -84,8 +84,8 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#ffffff",
-          "foreground_templates": ["{{ if gt .Code 0 }}#ff0000{{ end }}"],
+          "foreground": "#89ddff",
+          "foreground_templates": ["{{ if gt .Code 0 }}#1f2335{{ end }}"],
           "options": {
             "always_enabled": true
           },
