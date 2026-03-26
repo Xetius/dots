@@ -42,7 +42,7 @@
           "style": "powerline",
           "powerline_symbol": "",
           "foreground": "#000000",
-          "background": "#89ddff",
+          "background": "#7aa2f7",
           "template": " ﴱ {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} ",
           "options": {
             "context_aliases": {
