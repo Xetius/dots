@@ -24,7 +24,6 @@
             "{{ if gt .Ahead 0 }}#9ece6a{{ end }}",
             "{{ if gt .Behind 0 }}#9ece6a{{ end }}"
           ],
-          "foreground": "#292e42",
           "foreground_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#292e42{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#292e42{{ end }}",
