@@ -16,14 +16,21 @@
           "type": "path"
         },
         {
-          "background": "#9ea5c9",
+          "background": "#292e42",
+          "foreground": "#a6add2",
           "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#e0af68{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#db4b4b{{ end }}",
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#db4b4b{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#e0af68{{ end }}",
             "{{ if gt .Ahead 0 }}#9ece6a{{ end }}",
             "{{ if gt .Behind 0 }}#9ece6a{{ end }}"
           ],
           "foreground": "#292e42",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#292e42{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#292e42{{ end }}",
+            "{{ if gt .Ahead 0 }}#292e42{{ end }}",
+            "{{ if gt .Behind 0 }}#292e42{{ end }}"
+          ],
           "leading_diamond": "\ue0b6",
           "powerline_symbol": "\ue0b0",
           "options": {
