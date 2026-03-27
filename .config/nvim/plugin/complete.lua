@@ -1,7 +1,7 @@
 vim.pack.add({
 	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.0") },
 	{ src = "https://github.com/rafamadriz/friendly-snippets" },
-	{ src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("2.0") },
+	{ src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("2.4.1") },
 	{ src = "https://github.com/budimanjojo/k8s-snippets" },
 	{ src = "https://github.com/zbirenbaum/copilot.lua" },
 	{ src = "https://github.com/fang2hou/blink-copilot" },

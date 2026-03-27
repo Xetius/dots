@@ -3,7 +3,7 @@
     "LuaSnip": {
       "rev": "0b4950a237ce441a6a3a947d501622453f6860ea",
       "src": "https://github.com/L3MON4D3/LuaSnip",
-      "version": "2.0.0 - 2.1.0"
+      "version": "2.4.1 - 2.4.1"
     },
     "blink-copilot": {
       "rev": "7ad8209b2f880a2840c94cdcd80ab4dc511d4f39",
@@ -57,9 +57,29 @@
       "rev": "adeaeac8622b966273bb161977bff1293dd44565",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
+    "nvim-dap": {
+      "rev": "2a8799ad91a1495c6bdf753f9b2179b3ff0f5bba",
+      "src": "https://github.com/mfussenegger/nvim-dap"
+    },
+    "nvim-dap-go": {
+      "rev": "b4421153ead5d726603b02743ea40cf26a51ed5f",
+      "src": "https://github.com/leoluz/nvim-dap-go"
+    },
+    "nvim-dap-python": {
+      "rev": "1808458eba2b18f178f990e01376941a42c7f93b",
+      "src": "https://github.com/mfussenegger/nvim-dap-python"
+    },
+    "nvim-dap-ui": {
+      "rev": "f5b6673f374626515401c5bc51b005f784a4f252",
+      "src": "https://github.com/rcarriga/nvim-dap-ui"
+    },
     "nvim-lspconfig": {
       "rev": "841c6d4139aedb8a3f2baf30cef5327371385b93",
       "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-nio": {
+      "rev": "21f5324bfac14e22ba26553caf69ec76ae8a7662",
+      "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-treesitter": {
       "rev": "53f6ce29df5841ce26e5a9f06fb371088b8d8031",
@@ -89,17 +109,13 @@
       "rev": "5255aa27c422de944791318024167ad5d40aad20",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
+    "tiny-inline-diagnostic.nvim": {
+      "rev": "ba133b3e932416e4b9507095731a6d7276878fe8",
+      "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
+    },
     "tokyonight.nvim": {
       "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
       "src": "https://github.com/folke/tokyonight.nvim"
-    },
-    "tv.nvim": {
-      "rev": "c0603ca8f31299c83deaa9a24a63d67116db25cd",
-      "src": "https://github.com/alexpasmantier/tv.nvim"
-    },
-    "tv.vim": {
-      "rev": "88163c4cfd72e580452a72af46282d707abc186b",
-      "src": "https://github.com/prabirshrestha/tv.vim"
     }
   }
 }

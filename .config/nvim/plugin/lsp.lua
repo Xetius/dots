@@ -30,6 +30,13 @@ require('mason-tool-installer').setup({
     'lua_ls',
     'stylua',
     'pyright',
+    'ruff',
+    'debugpy',
+    'gopls',
+    'gofumpt',
+    'goimports',
+    'golangci-lint',
+    'delve',
     'terraformls',
     'yamlls',
     'yamllint',
@@ -58,6 +65,27 @@ vim.lsp.config('lua_ls', {
       workspace = {
         library = vim.api.nvim_get_runtime_file('', true),
       },
+    },
+  },
+})
+
+vim.lsp.config('gopls', {
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+        shadow = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    },
+  },
+})
+
+vim.lsp.config('ruff', {
+  init_options = {
+    settings = {
+      lint = { enable = true },
     },
   },
 })
