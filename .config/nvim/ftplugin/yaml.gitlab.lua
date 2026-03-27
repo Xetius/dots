@@ -1,0 +1,1 @@
+-- Filetype settings for GitLab CI files

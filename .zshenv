@@ -1,4 +1,3 @@
-export TERM='xterm-256color'
 export XDG_CONFIG_HOME="${HOME}/.config"
 export DOTFILES="${XDG_CONFIG_HOME}"
 
@@ -24,6 +23,8 @@ if [[ "${HOSTNAME}" == "lontngm-047.local" ]]; then
     export AWS_PROFILE=DevOpsAdmin
 
     test -f "${DOTFILES}/zsh/secrets" && source "$_"
+
+    SUDO_EDITOR='/users/c.hudson/.local/share/bob/nvim-bin/nvim'
 fi
 
 if [[ -f "~/openai.txt" ]]; then
@@ -35,3 +36,4 @@ if [[ -f "~/.github/token" ]]; then
 fi
 
 . "$HOME/.cargo/env"
+. "/Users/c.hudson/.local/share/bob/env/env.sh"

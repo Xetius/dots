@@ -1,3 +1,5 @@
+vim.lsp.log.set_level('ERROR')
+
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function()
     vim.lsp.inline_completion.enable(true)
@@ -33,7 +35,8 @@ require('mason-tool-installer').setup({
     'yamllint',
     'kube-linter',
     'kubescape',
-
+    'black',
+    'isort',
   }
 })
 

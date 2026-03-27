@@ -13,7 +13,9 @@ vim.pack.add ({
 })
 
 require('markdown').setup()
-require('render-markdown').setup()
+require('render-markdown').setup({
+  latex = { enabled = false },
+})
 require('peek').setup()
 
 vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})

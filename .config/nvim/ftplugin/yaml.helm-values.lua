@@ -1,0 +1,1 @@
+-- Filetype settings for Helm values files

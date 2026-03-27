@@ -1,0 +1,1 @@
+-- Filetype settings for Go workspace files

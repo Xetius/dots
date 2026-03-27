@@ -53,6 +53,7 @@ zplug "jeffreytse/zsh-vi-mode"
 zplug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/gruvbox", from:local, as:theme
 
 if type brew &>/dev/null; then
+  fpath+=~/.zfunc
   autoload -Uz compinit && compinit
   autoload -Uz bashcompinit && bashcompinit
 fi
