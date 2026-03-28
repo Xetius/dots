@@ -3,13 +3,16 @@ vim.lsp.log.set_level('ERROR')
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function()
     vim.lsp.inline_completion.enable(true)
-    vim.keymap.set({'i', 'n'}, '<C-j>', function()
+    vim.keymap.set({'i', 'n'}, '<C-.>', function()
       vim.lsp.inline_completion.get()
     end, {
       desc = 'Get the current inline completion',
     })
 
-    vim.keymap.set('i', '<C-]>', function()
+    vim.keymap.set('i', '<C-p>', function()
+      vim.lsp.inline_completion.select_prev()
+    end)
+    vim.keymap.set('i', '<C-n>', function()
       vim.lsp.inline_completion.select()
     end)
   end,
