@@ -6,12 +6,9 @@ require('mini.basics').setup()
 require('mini.icons').setup()
 require('mini.surround').setup()
 require('mini.ai').setup()
-require('mini.clue').setup()
 require('mini.comment').setup()
 require('mini.diff').setup()
 require('mini.extra').setup()
-require('mini.fuzzy').setup()
-require('mini.git').setup()
 require('mini.hipatterns').setup({
   highlighters = {
     hex_color = require('mini.hipatterns').gen_highlighter.hex_color(),
@@ -22,5 +19,4 @@ require('mini.jump').setup()
 require('mini.jump2d').setup()
 require('mini.splitjoin').setup()
 require('mini.statusline').setup()
-require('mini.pick').setup()
 
