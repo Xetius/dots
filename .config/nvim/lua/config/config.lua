@@ -16,4 +16,3 @@ vim.filetype.add({
     ["values%.yaml"] = "yaml.helm-values",
   },
 })
-

@@ -9,11 +9,7 @@ require('mini.ai').setup()
 require('mini.comment').setup()
 require('mini.diff').setup()
 require('mini.extra').setup()
-require('mini.hipatterns').setup({
-  highlighters = {
-    hex_color = require('mini.hipatterns').gen_highlighter.hex_color(),
-  },
-})
+require('mini.hipatterns').setup()
 require('mini.indentscope').setup()
 require('mini.jump').setup()
 require('mini.jump2d').setup()

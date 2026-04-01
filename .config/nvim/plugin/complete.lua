@@ -14,14 +14,21 @@ end
 require("luasnip.loaders.from_vscode").lazy_load({ paths = snippet_paths })
 
 require("copilot").setup({
-	suggestion = { enabled = true },
+	suggestion = {
+		enabled = true,
+		auto_trigger = true,
+		keymap = {
+			accept = "<A-l>",
+      accept_word = "<Right>",
+      accept_line = "<S-ight>",
+		},
+	},
 	panel = { enabled = true },
 })
 
 require("blink.cmp").setup({
 	keymap = {
     preset = "default",
-
   },
 	appearance = {
 		nerd_font_variant = "mono",
@@ -33,8 +40,26 @@ require("blink.cmp").setup({
 				components = {
 					kind_icon = {
 						text = function(ctx)
-							return " " .. ctx.kind_icon .. ctx.icon_gap .. " "
+              local icon = ctx.kind_icon
+              if ctx.item.source_name == "LSP" then
+                local color_item = require('nvim-highlight-colors').format(ctx.item.documentation, { kind = ctx.kind })
+                if color_item and color_item.abbr ~= '' then
+                  icon = color_item.abbr
+                end
+              end
+
+							return " " .. icon .. ctx.icon_gap .. " "
 						end,
+            highlight = function(ctx)
+              local highlight = "BlinkCmpKind" .. ctx.kind
+              if ctx.item.source_name == "LSP" then
+                local color_item = require('nvim-highlight-colors').format(ctx.item.documentation, { kind = ctx.kind })
+                if color_item and color_item.abbr_hl_group then
+                  highlight = color_item.abbr_hl_group
+                end
+              end
+              return highlight
+            end,
 					},
 				},
 			},
@@ -57,4 +82,3 @@ require("blink.cmp").setup({
 		implementation = "prefer_rust",
 	},
 })
-
