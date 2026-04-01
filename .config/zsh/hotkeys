@@ -1,2 +1,3 @@
 # Command Buffer Hotkeys
 bindkey -s '^Xgc' 'git commit -m ""^[OD'
+bindkey -s '^Xgf' 'aws-switch'

@@ -103,6 +103,13 @@ zplug load
 
 fastfetch
 
+# aws-switch: SSO login and set AWS_PROFILE in the current shell
+aws-switch() {
+  local selected
+  selected=$(command aws-switch) || return $?
+  export AWS_PROFILE="$selected"
+}
+
 # >>> forge initialize >>>
 # !! Contents within this block are managed by 'forge zsh setup' !!
 # !! Do not edit manually - changes will be overwritten !!
