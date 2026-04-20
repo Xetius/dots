@@ -103,7 +103,6 @@ zplug load
 
 fastfetch
 
-# aws-switch: SSO login and set AWS_PROFILE in the current shell
 aws-switch() {
   local selected
   selected=$(command aws-switch) || return $?

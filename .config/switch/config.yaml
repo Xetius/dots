@@ -1,0 +1,26 @@
+contexts:
+  psp-dev:
+    profile: PSPAdmin
+    eks_cluster: psp-dev
+    region: eu-west-1
+  psp-pt:
+    profile: PSPAdmin
+    eks_cluster: psp-pt
+    region: eu-west-1
+  psp-prod:
+    profile: PSPAdmin
+    eks_cluster: psp-prod
+    region: eu-west-1
+  pns-dev:
+    profile: PNSAdmin
+    eks_cluster: pns-dev
+    region: eu-west-1
+  pns-prod:
+    profile: PNSAdmin
+    eks_cluster: pns-prod-test2
+    region: eu-west-1
+  sat-uat:
+    profile: AcuityAdmin
+    eks_cluster: acuitytec-infra-uat
+    region: ca-central-1
+

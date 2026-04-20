@@ -14,18 +14,9 @@ alias gpr='git pull -r'
 # kubectl
 alias k='kubectl'
 alias -g JQ="| jaq -CRr '. as \$line | try (fromjson | [\"\u001b[33m\"+(.ts|fromdateiso8601|strftime(\"%Y-%m-%d %H:%M:%S\")), (if .level==\"info\" then \"\u001b[32m\"+.level elif .level==\"warn\" then \"\u001b[33m\"+.level elif .level==\"error\" then \"\u001b[31m\"+.level else \"\u001b[37m\"+.level end), \"\u001b[37m\"+.msg] | @tsv) catch \$line'"
-#
-# microk8s
-alias mk='microk8s'
-alias mke='microk8s enable'
-alias mkd='microk8s disable'
-alias mkst='microk8s status'
-alias mkup='microk8s start'
-alias mkdn='microk8s stop'
-alias mkrs='microk8s reset'
-alias mkvs='microk8s version'
-alias mkcl='microk8s config'
-alias mkk='microk8s kubectl'
+
+# switch
+alias s='switch'
 
 # miscellaneous
 alias vc='vim ~/.zshrc'

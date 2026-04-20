@@ -17,7 +17,24 @@ require('render-markdown').setup({
   latex = { enabled = false },
 })
 require('peek').setup()
+local peek = require('peek')
 
-vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
-vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
+local function peek_toggle()
+  if peek.is_open() then
+    peek.close()
+  else
+    peek.open()
+  end
+end
+
+vim.api.nvim_create_user_command('PeekOpen', peek.open, {})
+vim.api.nvim_create_user_command('PeekClose', peek.close, {})
+
+vim.api.nvim_create_user_command('PeekToggle', function()
+  if vim.bo[vim.api.nvim_get_current_buf()].filetype == 'markdown' then
+     peek.toggle()
+  end
+end, {})
+
+vim.keymap.set('n', '<leader>mp', peek_toggle, { desc = 'Toggle Peek' })
 
