@@ -86,7 +86,6 @@ eval "$(tv init zsh)"
 
 export ATUIN_NOBIND="true"
 eval "$(atuin init zsh)"
-{ print "DBG1 after atuin init: widgets=$(zle -la 2>&1 | grep -c atuin)"; } >> /tmp/atdbg.log
 typeset -a zvm_after_init_commands
 zvm_after_init_commands+=('bindkey -M emacs "^r" atuin-search')
 zvm_after_init_commands+=('bindkey -M viins "^r" atuin-search-viins')
@@ -108,10 +107,6 @@ if [[ -d "$HOME/.cargo/bin" ]]; then
 fi
 
 zplug load
-
-{ print "DBG2 after zplug load: widgets=$(zle -la 2>&1 | grep -c atuin) hook=${#zvm_after_init_commands[@]}"; } >> /tmp/atdbg.log
-
-fastfetch
 
 aws-switch() {
   local selected
