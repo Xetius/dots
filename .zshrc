@@ -44,7 +44,7 @@ source $DOTFILES/zsh/hotkeys
 export KEYTIMEOUT=1
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:3
+# zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "urbainvaes/fzf-marks"
@@ -84,11 +84,19 @@ eval "$(thefuck --alias)"
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/xetius.omp.json)"
 eval "$(tv init zsh)"
 
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+export ATUIN_NOBIND="true"
+eval "$(atuin init zsh)"
+{ print "DBG1 after atuin init: widgets=$(zle -la 2>&1 | grep -c atuin)"; } >> /tmp/atdbg.log
+typeset -a zvm_after_init_commands
+zvm_after_init_commands+=('bindkey -M emacs "^r" atuin-search')
+zvm_after_init_commands+=('bindkey -M viins "^r" atuin-search-viins')
+zvm_after_init_commands+=('bindkey -M vicmd "^r" atuin-search')
 
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+#
+# bindkey '^[[A' history-substring-search-up
+# bindkey '^[[B' history-substring-search-down
 bindkey '^x^e' edit-command-line
 bindkey ' ' magic-space
 bindkey '^y' autosuggest-accept
@@ -100,6 +108,8 @@ if [[ -d "$HOME/.cargo/bin" ]]; then
 fi
 
 zplug load
+
+{ print "DBG2 after zplug load: widgets=$(zle -la 2>&1 | grep -c atuin) hook=${#zvm_after_init_commands[@]}"; } >> /tmp/atdbg.log
 
 fastfetch
 

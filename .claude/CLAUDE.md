@@ -1,62 +1,61 @@
-# CLAUDE.md
+# Global Claude Code Instructions
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+## About Me
 
-## Overview
+- Name: Chris
+- Preferred language: English UK
+- Experience level: Fluent
 
-This is a dotfiles repository for a development environment centered on Neovim, Tmux, and Zsh. Files are symlinked to the home directory using GNU Stow.
+## Code Style Preferences
 
-## Commands
+- Indentation: Generally use 2 spaces for indentation unless otherwise specified
+- Naming conventions:
+- Comments: Never add co-authored comments or commit messages
+- Do not use emojis in code unless specifically requested.
+- Be DRY where possible, but also be pragmatic about it. Refactor duplicate code
+  to methods or functions where required.
+- Never use endash or emdash
 
-```bash
-# Install all dependencies from Brewfile
-brew bundle install
+## Documentation Style
 
-# Symlink dotfiles to home directory
-cd ~/dotfiles && stow .
+- Create documentation in markdown format.
+- There should always be a README.md file in the root of the git project
+- All other documents should be stored in a docs/ directory
+- Avoid using emojis unless specifically requested.
+- Create diagrams using Mermaid
+- Never use endash or emdash
 
-# Reload zsh configuration
-source ~/.zshrc
-```
+## Git Usage
 
-## Architecture
+- Use worktrees in Git.
+- Worktrees should be named using the Jira ticket id (usually DOPS-xxxx where
+  xxxx is the ticket number, e.g. DOPS-1234) followed by a short text to explain
+  its purpose (e.g. DOPS-1234-add-logging)
+- Never use co-authored in the git commit messages
+- Never commit to git. Always ask me to do that.
 
-### Neovim Configuration (`.config/nvim/`)
+## General Preferences
 
-The Neovim setup uses **lazy.nvim** as the plugin manager with modular configuration:
+- Be concise in explanations
+- Ask before making major changes
+- Prefer editing existing files over creating new ones
 
-- `init.lua` - Entry point that loads all config modules
-- `lua/config/` - Core settings:
-  - `options.lua` - Editor options (2-space indentation, relative line numbers, system clipboard)
-  - `keymaps.lua` - All keybindings organized by plugin/feature
-  - `lazy.lua` - Plugin manager bootstrap
-  - `colorscheme.lua` - Gruvbox Material dark theme
-- `lua/plugins/` - Individual plugin configurations (one file per plugin or feature group)
+## Tools & Environment
 
-**LSP Stack:**
-- Mason manages LSP server installation
-- blink.cmp for completions with LuaSnip snippets
-- Configured servers: lua_ls, rust_analyzer, gopls, yamlls, terraformls, bashls
+- OS: macOS
+- Shell: zsh
+- Editor: Neovim
+- Terminal: Ghostty
+- Terminal Multiplexor: TMUX
 
-**Key Navigation Plugins:**
-- Telescope (fuzzy finding): `<leader>f*` commands
-- Harpoon2 (quick file marks): `<leader>h*` and `Alt+1-5`
-- Oil.nvim (file browser): `<leader>e`
-- vim-tmux-navigator: `Ctrl+hjkl` moves between Vim splits and Tmux panes
+## Things to Avoid
 
-### Shell Configuration (`.config/zsh/`)
+- Avoid using emojis unless specifically requested
+- Avoid using co-authored comments or messages
+- Avoid duplicating code where possible
+- Avoid using endash or emdash
 
-- `aliases` - Shell aliases for common tools (eza, kubectl, terraform, git)
-- Zsh with zplug plugin manager
-- oh-my-posh prompt
+## Things to Always Do
 
-### Tmux (`.config/tmux/tmux.conf`)
+- Always check. Never guess or assume. You should double check your answers.
 
-Tmux with plugins managed via TPM, integrates with vim-tmux-navigator for seamless pane switching.
-
-## Key Patterns
-
-- **Leader key**: Space
-- **Formatting**: conform.nvim with LSP fallback, runs on save
-- **Diagnostics**: Trouble.nvim via `<leader>x*` keybindings
-- **Claude integration**: claudecode.nvim plugin with `<leader>a*` keybindings
