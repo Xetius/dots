@@ -36,6 +36,3 @@ vim.o.background = "dark"
 vim.o.undofile = true
 vim.o.undodir = vim.fn.stdpath("data") .. "/undo"
 vim.o.autoread = true
-
-vim.o.confirm = true
-

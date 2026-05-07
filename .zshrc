@@ -44,7 +44,7 @@ source $DOTFILES/zsh/hotkeys
 export KEYTIMEOUT=1
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-# zplug "zsh-users/zsh-history-substring-search", defer:3
+zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "urbainvaes/fzf-marks"
@@ -84,18 +84,11 @@ eval "$(thefuck --alias)"
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/xetius.omp.json)"
 eval "$(tv init zsh)"
 
-export ATUIN_NOBIND="true"
-eval "$(atuin init zsh)"
-typeset -a zvm_after_init_commands
-zvm_after_init_commands+=('bindkey -M emacs "^r" atuin-search')
-zvm_after_init_commands+=('bindkey -M viins "^r" atuin-search-viins')
-zvm_after_init_commands+=('bindkey -M vicmd "^r" atuin-search')
-
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-#
-# bindkey '^[[A' history-substring-search-up
-# bindkey '^[[B' history-substring-search-down
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 bindkey '^x^e' edit-command-line
 bindkey ' ' magic-space
 bindkey '^y' autosuggest-accept
@@ -108,36 +101,38 @@ fi
 
 zplug load
 
+fastfetch
+
+# aws-switch: SSO login and set AWS_PROFILE in the current shell
 aws-switch() {
   local selected
   selected=$(command aws-switch) || return $?
   export AWS_PROFILE="$selected"
 }
 
-# NOTE: Forge removed due to no longer working with Claude Max Subscription
 # >>> forge initialize >>>
 # !! Contents within this block are managed by 'forge zsh setup' !!
 # !! Do not edit manually - changes will be overwritten !!
 
-# # Add required zsh plugins if not already present
-# if [[ ! " ${plugins[@]} " =~ " zsh-autosuggestions " ]]; then
-#     plugins+=(zsh-autosuggestions)
-# fi
-# if [[ ! " ${plugins[@]} " =~ " zsh-syntax-highlighting " ]]; then
-#     plugins+=(zsh-syntax-highlighting)
-# fi
-#
-# # Load forge shell plugin (commands, completions, keybindings) if not already loaded
-# if [[ -z "$_FORGE_PLUGIN_LOADED" ]]; then
-#     eval "$(forge zsh plugin)"
-# fi
-#
-# # Load forge shell theme (prompt with AI context) if not already loaded
-# if [[ -z "$_FORGE_THEME_LOADED" ]]; then
-#     eval "$(forge zsh theme)"
-# fi
-#
-# # Editor for editing prompts (set during setup)
-# # To change: update FORGE_EDITOR or remove to use $EDITOR
-# export FORGE_EDITOR="nvim"
-# # <<< forge initialize <<<
+# Add required zsh plugins if not already present
+if [[ ! " ${plugins[@]} " =~ " zsh-autosuggestions " ]]; then
+    plugins+=(zsh-autosuggestions)
+fi
+if [[ ! " ${plugins[@]} " =~ " zsh-syntax-highlighting " ]]; then
+    plugins+=(zsh-syntax-highlighting)
+fi
+
+# Load forge shell plugin (commands, completions, keybindings) if not already loaded
+if [[ -z "$_FORGE_PLUGIN_LOADED" ]]; then
+    eval "$(forge zsh plugin)"
+fi
+
+# Load forge shell theme (prompt with AI context) if not already loaded
+if [[ -z "$_FORGE_THEME_LOADED" ]]; then
+    eval "$(forge zsh theme)"
+fi
+
+# Editor for editing prompts (set during setup)
+# To change: update FORGE_EDITOR or remove to use $EDITOR
+export FORGE_EDITOR="nvim"
+# <<< forge initialize <<<
